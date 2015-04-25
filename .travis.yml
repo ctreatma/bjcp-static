@@ -1,0 +1,12 @@
+script: "./generate_api.rb"
+before_deploy: "mkdir php; mv styles php/"
+deploy:
+  provider: openshift
+  user: charles.treatman@gmail.com
+  password:
+    secure: JhZJygcTfGE7j0ziiQPPN1igAmb6FAXWcSpja76sjv8iupJUFE8DuaOZYRKvYnQXW6R0PpTWYM3zSdzh0XxnnzZso9P7IPEbhDSF7HAxbuFwpUD7Qq5RrbTACeNvY7EELcJdT00DPMZxO0zpagQRSO/kt5vK9vwIET6zDv95jfE=
+  app: bjcpstatic
+  domain: charlestreatman
+  skip_cleanup: true
+  on:
+    repo: ctreatma/bjcp-static
